@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfterPlayz - Video Sharing Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>ðŸŽ® AfterPlayz</h2>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Cari video...">
+                <button class="search-btn"><span class="material-icons">search</span></button>
+            </div>
+            <div class="user-actions">
+                <button id="uploadBtn" class="btn-upload">
+                    <span class="material-icons">video_call</span> Upload
+                </button>
+                <button id="loginBtn" class="btn-login">Login</button>
+                <div id="userProfile" class="user-profile" style="display: none;">
+                    <img id="profileImg" src="" alt="Profile">
+                    <span id="userName"></span>
+                    <button id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Upload Video</h2>
+            <form id="uploadForm">
+                <input type="file" id="videoFile" accept="video/*" required>
+                <input type="text" id="videoTitle" placeholder="Judul Video" required>
+                <textarea id="videoDesc" placeholder="Deskripsi..."></textarea>
+                <button type="submit">Upload Video</button>
+            </form>
+            <div id="uploadProgress" class="progress-bar" style="display: none;">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Recommended Videos -->
+        <section class="section">
+            <h3>Recommended</h3>
+            <div id="recommendedVideos" class="video-grid">
+                <!-- Videos akan dimuat secara dinamis -->
+            </div>
+        </section>
+
+        <!-- Trending -->
+        <section class="section">
+            <h3>Trending</h3>
+            <div id="trendingVideos" class="video-grid">
+                <!-- Videos akan dimuat secara dinamis -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-container">
+            <span class="video-close">&times;</span>
+            <video id="player" controls>
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h3 id="modalTitle"></h3>
+                <div class="video-meta">
+                    <span id="followCount">0</span> follows
+                    <span id="viewCount">0</span> views
+                </div>
+                <button id="followBtn" class="follow-btn">Follow</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+              </html>
